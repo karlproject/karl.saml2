@@ -1,0 +1,8 @@
+``karl.saml2 Changelog
+======================
+
+Unreleased
+----------
+
+- Initial version.
+
