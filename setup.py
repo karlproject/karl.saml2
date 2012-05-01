@@ -8,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-REQUIRES = ['setuptools', 'karl']
+REQUIRES = ['setuptools', 'karl', 'pySAML2']
 
 setup(name='karl.saml2',
       version=__version__,
