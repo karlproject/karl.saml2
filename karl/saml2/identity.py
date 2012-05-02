@@ -1,11 +1,15 @@
-#from zope.interface import implementer
-from zope.interface import implements
-
-from karl.saml2.interfaces import IIdentityProvider
+from pyramid.view import view_config
 
 
-# WTF?  How can we bw using a version of zope.interface which doesn't support
-# class decorators?
-#@implementer(IIdentityProvider) 
-class IdentityProvider(object):
-    implements(IIdentityProvider)
+@view_config(name='sso', renderer='templates/login.pt')
+def sign_on(context, request):
+    """ Perform the SAML2 SSO dance.
+
+    - If the request already has valid credentials, process the 'SAMLRequest'
+      query string value and return a POSTing redirect.
+
+    - If processing the POSTed login form, authenticate.
+
+    - If no authenticated user is known, display the login form.
+    """
+    return {'hidden': request.GET.items()}

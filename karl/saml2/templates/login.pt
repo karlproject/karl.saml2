@@ -1,0 +1,24 @@
+<html>
+<head>
+ <title>SAML2 Log In</title>
+</head>
+<body>
+ <h1>SAML2 Log In </h1>
+ <div>
+  <form method="POST" action="?__do_login=true">
+   <tal:loop tal:repeat="name,value hidden">
+    <input type=hidden name="${name}" value="${value}" />
+   </tal:loop>
+   <fieldset id="login_fs">
+    <legend>Username</legend>
+    <input type="text" id="login" name="login" />
+   </fieldset>
+   <fieldset id="password_fs">
+    <legend>Password<legend>
+    <input type="password" id="password" name="password" />
+   </fieldset>
+   <input name="submit" type="submit" value="Log in">
+  </form>
+ <div>
+</body>
+</html>
